@@ -16,15 +16,21 @@ using System.Windows.Shapes;
 namespace WPFprojects
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for Menu.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class Menu : Page
     {
-        public MainWindow()
+        private Frame mainFrame;
+        public Menu(Frame mainFrame)
         {
             InitializeComponent();
-            Menu page1 = new Menu(this.mainFrame);
-            this.mainFrame.Content = page1;
+            this.mainFrame = mainFrame;
+        }
+
+        private void Button_game1_Click(object sender, RoutedEventArgs e)
+        {
+            ElementShooterPage page2 = new ElementShooterPage(this.mainFrame);
+            this.mainFrame.Content = page2;
         }
     }
 }

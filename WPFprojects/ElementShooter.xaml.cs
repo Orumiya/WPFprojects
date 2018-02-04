@@ -16,15 +16,16 @@ using System.Windows.Shapes;
 namespace WPFprojects
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for ElementShooterPage.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class ElementShooterPage : Page
     {
-        public MainWindow()
+        private Frame mainFrame;
+
+        public ElementShooterPage(Frame mainFrame)
         {
             InitializeComponent();
-            Menu page1 = new Menu(this.mainFrame);
-            this.mainFrame.Content = page1;
+            this.mainFrame = mainFrame;
         }
     }
 }
