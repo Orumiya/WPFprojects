@@ -11,10 +11,11 @@ namespace WPFprojects.Data
 {
     class Triangle : GameElement
     {
-        public Triangle(int height, int width)
+        public Triangle(int height, int width, int number)
         {
             Height = height;
             Width = width;
+            RandomColor(number);
             PathGeometry pathGeometry = new PathGeometry();
             PathFigure figure1 = new PathFigure();
             figure1.StartPoint = new Point(Location.X + Width / 2, Location.Y);
@@ -25,6 +26,23 @@ namespace WPFprojects.Data
             figure1.IsClosed = true;
             pathGeometry.Figures.Add(figure1);
             Shape = pathGeometry;
+        }
+
+        private void RandomColor(int number)
+        {
+            if (number <= 33)
+            {
+                Color = Color.Yellow;
+            }
+            else if (number > 33 && number <= 67)
+            {
+                Color = Color.Red;
+            }
+            else 
+            {
+                Color = Color.Blue;
+            }
+
         }
     }
 }

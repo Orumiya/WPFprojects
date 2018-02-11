@@ -8,8 +8,16 @@ using System.Windows.Media;
 
 namespace WPFprojects.Data
 {
+    enum Color
+    {
+        Red,
+        Blue,
+        Yellow
+    }
     class GameElement
     {
+        
+
         private Point location;
 
         public Point Location
@@ -42,9 +50,11 @@ namespace WPFprojects.Data
 
         public bool IsClicked { get; set; }
 
+        public Color Color { get; set; }
         public GameElement()
         {
             IsClicked = false;
+            
         }
         public Geometry GetTransformedGeometry()
         {
@@ -53,6 +63,10 @@ namespace WPFprojects.Data
             return copy.GetFlattenedPathGeometry();
         }
 
+        
 
     }
+
+
 }
+
